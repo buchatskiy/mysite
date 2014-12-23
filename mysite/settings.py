@@ -27,6 +27,8 @@ TEMPLATE_DEBUG = True
 import os.path
 TEMPLATE_DIRS = (
     os.path.join(os.path.dirname(__file__), 'template').replace('\\','/'),
+    os.path.join(os.path.dirname(__file__), 'template').replace('\\','/').replace('mysite/mysite/template','mysite/books'),
+    os.path.join(os.path.dirname(__file__), 'template').replace('\\','/').replace('mysite/template','contacts'),
 )
 
 ALLOWED_HOSTS = []
@@ -42,6 +44,8 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'books',
+    'contacts',
+
 )
 
 MIDDLEWARE_CLASSES = (

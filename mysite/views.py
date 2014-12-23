@@ -25,3 +25,11 @@ def hours_ahead(request, offset):
     #assert False
 
     return render_to_response('hours_ahead.html',{'hour_offset':offset,'next_time':dt})
+
+
+def display_meta(request):
+    values = request.META
+    values['request.path']=request.path
+    values=values.items()
+    values.sort()
+    return render_to_response('display_meta.html',{'values':values})
